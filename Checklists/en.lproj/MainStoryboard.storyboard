@@ -40,7 +40,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="rIF-lk-kSk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ewH-ly-oPC">
                             <connections>
-                                <segue destination="jym-LP-PBf" kind="modal" id="cCo-uS-XDm"/>
+                                <segue destination="jym-LP-PBf" kind="modal" identifier="AddItem" id="cCo-uS-XDm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -147,6 +147,23 @@
             <point key="canvasLocation" x="1140" y="81"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="AddItemViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddItemViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel"/>
+                <relationship kind="action" name="done"/>
+                <relationship kind="outlet" name="doneBarButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="ChecklistsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ChecklistsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="addItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
