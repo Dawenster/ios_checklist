@@ -50,6 +50,7 @@
     NSDictionary *dictionary = [NSDictionary dictionaryWithObjectsAndKeys:
                                 [NSNumber numberWithInt:-1], @"ChecklistIndex",
                                 [NSNumber numberWithBool:YES], @"FirstTime",
+                                [NSNumber numberWithInt:0], @"ChecklistItemId",
                                 nil];
     
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
@@ -90,6 +91,15 @@
 - (void)sortChecklists
 {
     [self.lists sortUsingSelector:@selector(compare:)];
+}
+
++ (int)nextChecklistItemId
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    int itemId = [userDefaults integerForKey:@"ChecklistItemId"];
+    [userDefaults setInteger:itemId + 1 forKey:@"ChecklistItemId"];
+    [userDefaults synchronize];
+    return itemId;
 }
 
 @end

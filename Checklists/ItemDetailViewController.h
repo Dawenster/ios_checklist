@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DatePickerViewController.h"
 
 @class ItemDetailViewController;
 @class ChecklistItem;
@@ -19,14 +20,17 @@
 
 @end
 
-@interface ItemDetailViewController : UITableViewController <UITextFieldDelegate>
+@interface ItemDetailViewController : UITableViewController <UITextFieldDelegate, DatePickerViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic, weak) id <ItemDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) ChecklistItem *itemToEdit;
+@property (nonatomic, strong) IBOutlet UISwitch *switchControl;
+@property (nonatomic, strong) IBOutlet UILabel *dueDateLabel;
 
 - (IBAction)cancel;
 - (IBAction)done;
+- (IBAction)switchChanged:(UISwitch *)sender;
 
 @end
