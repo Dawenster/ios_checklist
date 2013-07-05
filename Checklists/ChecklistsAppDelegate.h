@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChecklistsAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ChecklistAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

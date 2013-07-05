@@ -1,19 +1,20 @@
 //
-//  ChecklistsViewController.m
+//  ChecklistViewController.m
 //  Checklists
 //
 //  Created by David Wen on 2013-07-03.
 //  Copyright (c) 2013 David Wen. All rights reserved.
 //
 
-#import "ChecklistsViewController.h"
+#import "ChecklistViewController.h"
 #import "ChecklistItem.h"
+#import "Checklist.h"
 
-@interface ChecklistsViewController ()
+@interface ChecklistViewController ()
 
 @end
 
-@implementation ChecklistsViewController {
+@implementation ChecklistViewController {
     NSMutableArray *items;
 }
 
@@ -65,6 +66,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = self.checklist.name;
 }
 
 - (void)didReceiveMemoryWarning

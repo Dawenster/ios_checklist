@@ -8,7 +8,7 @@
 
 #import "ChecklistsAppDelegate.h"
 
-@implementation ChecklistsAppDelegate
+@implementation ChecklistAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
